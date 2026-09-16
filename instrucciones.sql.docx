@@ -1,0 +1,22 @@
+-- Crear la base de datos
+CREATE DATABASE restaurante_db;
+USE restaurante_db;
+
+-- Crear la tabla de reservas
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    edad INT NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    fecha_reserva DATE NOT NULL,
+    num_personas INT NOT NULL,
+    turno ENUM('Comida', 'Cena') NOT NULL
+);
+
+-- Insertar 2 registros de prueba
+INSERT INTO reservas (nombre, apellido, edad, telefono, fecha_reserva, num_personas, turno) 
+VALUES ('Carlos', 'Gómez', 30, '600123456', '2026-10-01', 4, 'Comida');
+
+INSERT INTO reservas (nombre, apellido, edad, telefono, fecha_reserva, num_personas, turno) 
+VALUES ('Laura', 'Pérez', 25, '611987654', '2026-10-01', 2, 'Cena');
